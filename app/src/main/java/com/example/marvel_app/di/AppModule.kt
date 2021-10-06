@@ -1,6 +1,6 @@
 package com.example.marvel_app.di
 
-import com.example.marvel_app.model.Character
+import com.example.marvel_app.services.MarvelServices
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,14 +16,14 @@ object AppModule {
     @Provides
     fun provideRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("http://marvel.com")
+            .baseUrl("https://gateway.marvel.com")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
 
     @Provides
-    fun providesMarvel(retrofit: Retrofit) : Character =
-        retrofit.create(Character::class.java)
+    fun providesMarvel(retrofit: Retrofit) : MarvelServices =
+        retrofit.create(MarvelServices::class.java)
 
 
 }

@@ -3,9 +3,11 @@ package com.example.marvel_app
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.marvel_app.view.MainFragment
+import dagger.hilt.android.AndroidEntryPoint
 import java.math.BigInteger
 import java.security.MessageDigest
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     val currentTimestamp = System.currentTimeMillis()

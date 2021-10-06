@@ -12,6 +12,7 @@ class MarvelRepository @Inject constructor(private val service : MarvelServices)
         return withContext(Dispatchers.Default){
             val response = service.getAll(ts = "1", apikey = "cee505bb39748d332c295036d51393b9", hash = "2ab26aa6e773b91466ed1da1140c922d")
             val processedResponse = processData(response)
+            println(processedResponse)
             processedResponse
         }
     }
